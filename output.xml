@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20220412 21:31:05.029" schemaversion="2" generator="Robot 4.1.3 (Python 2.7.18 on win32)">
+<suite source="C:\vs code python\TestCase1.robot" id="s1" name="TestCase1">
+<test id="s1-t1" name="TableValidationsTest">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220412 21:31:05.400" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
+<status status="PASS" endtime="20220412 21:31:14.506" starttime="20220412 21:31:05.398"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20220412 21:31:14.664" starttime="20220412 21:31:14.507"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=txtUsername</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220412 21:31:14.668" level="INFO">Typing text 'Admin' into text field 'id=txtUsername'.</msg>
+<status status="PASS" endtime="20220412 21:31:14.892" starttime="20220412 21:31:14.666"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>id=txtPassword</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220412 21:31:14.894" level="INFO">Typing password into text field 'id=txtPassword'.</msg>
+<msg timestamp="20220412 21:31:14.974" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220412 21:31:15.059" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" endtime="20220412 21:31:15.060" starttime="20220412 21:31:14.893"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=btnLogin</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220412 21:31:15.061" level="INFO">Clicking button 'id=btnLogin'.</msg>
+<status status="PASS" endtime="20220412 21:31:21.192" starttime="20220412 21:31:15.061"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>(//a[contains(@class,'firstLevelMenu')])[3]/..</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220412 21:31:21.196" level="INFO">Clicking element '(//a[contains(@class,'firstLevelMenu')])[3]/..'.</msg>
+<status status="PASS" endtime="20220412 21:31:23.659" starttime="20220412 21:31:21.196"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=leaveList_chkSearchFilter_checkboxgroup_allcheck</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220412 21:31:23.661" level="INFO">Clicking button 'id=leaveList_chkSearchFilter_checkboxgroup_allcheck'.</msg>
+<status status="PASS" endtime="20220412 21:31:23.743" starttime="20220412 21:31:23.660"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=btnSearch</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220412 21:31:23.744" level="INFO">Clicking button 'id=btnSearch'.</msg>
+<status status="PASS" endtime="20220412 21:31:24.948" starttime="20220412 21:31:23.743"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>xpath=//table[@class='table hover']/tbody</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" endtime="20220412 21:31:25.263" starttime="20220412 21:31:24.949"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${elementcount1}</var>
+<arg>${rows}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20220412 21:31:25.278" level="INFO">${elementcount1} = 50</msg>
+<status status="PASS" endtime="20220412 21:31:25.278" starttime="20220412 21:31:25.264"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${elementcount1}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" endtime="20220412 21:31:25.280" starttime="20220412 21:31:25.279"/>
+</kw>
+<if>
+<branch type="IF" condition="${elementcount1} == ${actualrows}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Table is showing first 50 results.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" endtime="20220412 21:31:25.281" starttime="20220412 21:31:25.280"/>
+</kw>
+<status status="PASS" endtime="20220412 21:31:25.281" starttime="20220412 21:31:25.280"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Table is not showing results Properly.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" endtime="20220412 21:31:25.282" starttime="20220412 21:31:25.282"/>
+</kw>
+<status status="NOT RUN" endtime="20220412 21:31:25.282" starttime="20220412 21:31:25.281"/>
+</branch>
+<status status="PASS" endtime="20220412 21:31:25.282" starttime="20220412 21:31:25.280"/>
+</if>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>xpath=(//li//a[contains(text(),'Next')])[2]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" endtime="20220412 21:31:25.579" starttime="20220412 21:31:25.282"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=(//li//a[contains(text(),'Next')])[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220412 21:31:25.581" level="INFO">Clicking element 'xpath=(//li//a[contains(text(),'Next')])[2]'.</msg>
+<status status="PASS" endtime="20220412 21:31:25.627" starttime="20220412 21:31:25.580"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>xpath=//table[@class='table hover']/tbody</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" endtime="20220412 21:31:26.969" starttime="20220412 21:31:25.628"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${elementcount2}</var>
+<arg>${rows}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20220412 21:31:26.983" level="INFO">${elementcount2} = 22</msg>
+<status status="PASS" endtime="20220412 21:31:26.983" starttime="20220412 21:31:26.970"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${elementcount2}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" endtime="20220412 21:31:26.984" starttime="20220412 21:31:26.983"/>
+</kw>
+<if>
+<branch type="IF" condition="${elementcount2} == ${actualrows2}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Table is showing rest of the 19 results on 2nd page.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" endtime="20220412 21:31:26.985" starttime="20220412 21:31:26.985"/>
+</kw>
+<status status="NOT RUN" endtime="20220412 21:31:26.985" starttime="20220412 21:31:26.985"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Table is not showing results Properly.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" endtime="20220412 21:31:26.986" starttime="20220412 21:31:26.986"/>
+</kw>
+<status status="PASS" endtime="20220412 21:31:26.986" starttime="20220412 21:31:26.986"/>
+</branch>
+<status status="PASS" endtime="20220412 21:31:26.986" starttime="20220412 21:31:26.985"/>
+</if>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20220412 21:31:29.533" starttime="20220412 21:31:26.987"/>
+</kw>
+<status status="PASS" endtime="20220412 21:31:29.534" starttime="20220412 21:31:05.396"/>
+</test>
+<doc>Template robot main suite.</doc>
+<status status="PASS" endtime="20220412 21:31:29.538" starttime="20220412 21:31:05.032"/>
+</suite>
+<statistics>
+<total>
+<stat fail="0" skip="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" skip="0" id="s1" name="TestCase1" pass="1">TestCase1</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220412 21:31:05.070" level="ERROR">Error in file 'C:\vs code python\TestCase1.robot' on line 4: Importing library 'MyLibrary' failed: ImportError: No module named MyLibrary
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Python27\Scripts\robot.exe
+  C:\WINDOWS\SYSTEM32\python27.zip
+  c:\python27\DLLs
+  c:\python27\lib
+  c:\python27\lib\plat-win
+  c:\python27\lib\lib-tk
+  c:\python27
+  c:\python27\lib\site-packages
+  c:\python27\lib\site-packages\win32
+  c:\python27\lib\site-packages\win32\lib
+  c:\python27\lib\site-packages\Pythonwin
+  c:\python27\lib\site-packages\wx-2.8-msw-unicode</msg>
+<msg timestamp="20220412 21:31:05.382" level="ERROR">Error in file 'C:\vs code python\TestCase1.robot' on line 6: Resource file 'keywords.robot' does not exist.</msg>
+<msg timestamp="20220412 21:31:05.386" level="ERROR">Error in file 'C:\vs code python\TestCase1.robot' on line 7: Variable file 'MyVariables.py' does not exist.</msg>
+</errors>
+</robot>
